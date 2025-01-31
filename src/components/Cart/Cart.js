@@ -14,7 +14,7 @@ const Cart = () => {
           <h2>Your Shopping Cart</h2>
           <ul>
             {cartItems.map((item) => (
-              <CartItem
+              <CartItem key={item.id}
               item={{
                 id:item.id,
                 title:item.title,

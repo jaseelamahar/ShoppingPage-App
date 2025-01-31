@@ -14,7 +14,9 @@
     justify-content: space-between;
     align-items: baseline;
   }
-  
+  .item h4{
+    color: white;
+  }
   .details {
     display: flex;
     justify-content: space-between;

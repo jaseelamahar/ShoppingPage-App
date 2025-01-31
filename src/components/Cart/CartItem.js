@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { cartActions } from '../store/cartslice';
 
 const CartItem = ({item}) => {
-  const { title, quantity, total, price,id } = item;
+  const { title, description,quantity, total, price,id } = item;
   const dispatch=useDispatch()
   const removeItemHandler=()=>{
     dispatch(cartActions.removeItemFromCart(id))
@@ -12,7 +12,8 @@ const CartItem = ({item}) => {
     dispatch(cartActions.addItemToCart({
       id,
       title,
-      price
+      price,
+      description
     }))
   }
 
@@ -20,6 +21,7 @@ const CartItem = ({item}) => {
     <li className={classes.item}>
       <header>
         <h3>{title}</h3>
+        <h4>{description}</h4>
         <div className={classes.price}>
           ${total?total.toFixed(2):"0.00"}{' '}
           <span className={classes.itemprice}>(${price?price.toFixed(2):"0.00"}/item)</span>
